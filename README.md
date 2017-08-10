@@ -1,9 +1,9 @@
-# walk-object
+# walk-object-sync
 Walks an object's keys, calling a function when each node is reached. Walk can be performed synchronously or asynchronously.
 
-## Synchronous example
+## Example
 ```
-const { walkObject } = require('walk-object')
+const walkObject = require('walk-object-sync')
 
 const obj = {
   order: {
@@ -37,82 +37,13 @@ walkObject(obj, ({ value, location, isLeaf }) => {
 'pants', ['order', 'customer', 'items', 1, 'description']
 ```
 
-## Async example
-```
-const { walkObjectAsync } = require('walk-object')
-
-const obj = {
-  order: {
-    number: 123,
-    customer: {
-      name: 'John Smith'
-    },
-    items: [
-      {
-        sku: 456,
-        description: 'shirt'
-      },
-      {
-        sku: 789,
-        description: 'pants'
-      }
-    ]
-  },
-}
-
-const vals = []
-
-// Simulate some async function...
-async function logValues({ value, location, isLeaf }) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      if (isLeaf) {
-        asyncVals.push({value, location})
-        resolve()
-      }
-    }, 250)
-  })
-}
-
-walkObjectAsync(obj, logValues)
-
-console.log(vals)
-
-//
-[
-  {
-    value: 123,
-    location: ['order', 'number']
-  },
-  {
-    value: 'John Smith',
-    location: ['order', 'customer', 'name']
-  },
-  {
-    value: 456,
-    location: ['order', 'customer', 'items', 0, 'sku']
-  },
-  {
-    value: 'shirt',
-    location: ['order', 'customer', 'items', 0, 'description']
-  },
-  {
-    value: 789,
-    location: ['order', 'customer', 'items', 1, 'sku']
-  }
-    value: 'pants',
-    location: ['order', 'customer', 'items', 1, 'description']
-  }
-]
-```
-
 ## Installation
 ```
-npm install --save walk-object
+npm install --save walk-object-sync
 ```
 
 ## API
-#### `walkObject(root, fn)` and `walkObjectAsync(root, fn)`
+#### `walkObject(root, fn)`
 
 param: `{object} root` - The object to walk.
 
