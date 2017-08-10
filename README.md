@@ -1,5 +1,5 @@
 # walk-object-sync
-Walks an object's keys, calling a function when each node is reached. Walk will be performed synchronously.
+Walks an object's keys, calling a function when each node is reached. Walk will be performed synchronously.  Excludes the async version of walkObject for compatibilty with ES6 and below.
 
 ## Example
 ```
@@ -47,7 +47,7 @@ npm install --save walk-object-sync
 
 param: `{object} root` - The object to walk.
 
-param: `{function} fn` - Function to call on each node. For `walkObjectAsync`, `fn` must be an `async` function (i.e. a function that returns a promise).
+param: `{function} fn` - Function to call on each node.
 
 The function will be passed an object with the following properties:
 
