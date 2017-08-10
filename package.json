@@ -1,0 +1,26 @@
+{
+  "name": "walk-object-sync",
+  "version": "1.0.0",
+  "description": "Walk an object's keys",
+  "main": "walk-object-sync.js",
+  "scripts": {
+    "test": "tape test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mmckelvy/walk-object-sync.git"
+  },
+  "keywords": [
+    "walk object",
+    "recursion",
+    "nodes object",
+  ],
+  "author": "Mark McKelvy",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "is-pure-object": "^1.0.0"
+  }
+}
