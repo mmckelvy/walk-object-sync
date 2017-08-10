@@ -1,5 +1,5 @@
 # walk-object-sync
-Walks an object's keys, calling a function when each node is reached. Walk can be performed synchronously or asynchronously.
+Walks an object's keys, calling a function when each node is reached. Walk will be performed synchronously.
 
 ## Example
 ```
