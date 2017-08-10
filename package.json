@@ -2,7 +2,7 @@
   "name": "walk-object-sync",
   "version": "1.0.0",
   "description": "Walk an object's keys",
-  "main": "walk-object-sync.js",
+  "main": "walk-object.js",
   "scripts": {
     "test": "tape test/*"
   },
